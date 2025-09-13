@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cover (Dark Mode)</title>
+
+  <style>
+    /* 🌙 다크모드 색상 테마 */
+    :root {
+      --bg: #0e141b;         /* 전체 배경 */
+      --panel-bg: #1b2430;   /* 중앙 박스 배경 */
+      --accent: white;     /* 버튼/포인트 색 */
+      --text-main: #f0f4f8;  /* 기본 글자 */
+      --text-muted: #a0aec0; /* 설명 글자 */
+      --border: rgba(255,255,255,0.08);
+      --hover: rgba(255,255,255,0.06);
+    }
+
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html,body { height:100%; }
+    body {
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+    }
+
+    .cover-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px;
+    }
+
+    /* ===== Header ===== */
+    header {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      display: flex;
+      gap: 16px;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    nav a:hover{
+        text-decoration: underline;
+        text-underline-offset: 4px;  /* 글자와 밑줄 사이 거리(px) */
+    }
+    nav a.active {
+        color: var(--text-main);
+        text-decoration: underline;
+        text-decoration-color: white;   /* 밑줄 색상 */
+        text-decoration-thickness: 2px; /* 굵기 */
+        text-underline-offset: 4px;  /* 글자와 밑줄 사이 거리(px) */
+    }
+
+    /* ===== Main ===== */
+    main {
+      width: 100%;
+      max-width: 900px;
+      background: var(--panel-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px 24px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    main h1 {
+      font-size: 2.3rem;
+      margin-bottom: 16px;
+    }
+    p.lead {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    .btn {
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      border: none;
+    }
+    .btn-primary:hover { background: #4098d7; transform: translateY(-2px); }
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      background: transparent;
+    }
+    .btn-ghost:hover { background: var(--hover); }
+
+    /* ===== Footer ===== */
+    footer {
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding: 16px;
+    }
+    footer a {
+        color: var(--text-main);
+        text-decoration: none;
+        color: white;             /* 글자색 */
+        text-decoration: underline;    /* 밑줄 항상 표시 */
+    }
+
+    @media (max-width: 640px) {
+      nav { display: none; }
+      main h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cover-container">
+    <header>
+      <div class="brand">Cover</div>
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Cover your page.</h1>
+      <p class="lead">
+        Cover is a one-page template for building simple and beautiful home<br/>
+        pages. Download, edit the text, and add your own fullscreen<br/>
+        background photo to make it your own.
+      </p>
+      <div class="btn-row">
+        <a href="#" class="btn btn-primary" style="color: black;">Learn more</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>
+        Cover template for 
+        <a href="https://getbootstrap.com/">Bootstrap</a>
+        , by 
+        <a href="https://x.com/mdo">@mdo.</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
